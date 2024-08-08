@@ -23,6 +23,15 @@ import {
 
 import "./App.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import {
+  IPAddressFinder,
+  LanguageTranslator,
+  MovieSearchEngine,
+  QRCodeGenerator,
+  QuizApp,
+  TodoApp,
+  Login
+} from "./components";
 
 // Estiliza o contêiner principal do aplicativo.
 const AppContainer = styled.div`

@@ -1,6 +1,6 @@
-import { useState } from 'react'; // Importa o hook useState do React
-import axios from 'axios'; // Importa a biblioteca axios para fazer requisições HTTP
-import styled from 'styled-components'; // Importa styled-components para estilizar os componentes
+import { useState } from "react"; // Importa o hook useState do React
+import axios from "axios"; // Importa a biblioteca axios para fazer requisições HTTP
+import styled from "styled-components"; // Importa styled-components para estilizar os componentes
 
 // Define o estilo do container principal
 const Container = styled.div`
@@ -68,14 +68,14 @@ const ResultsContainer = styled.div`
 `;
 
 // Componente principal IPAddressFinder
-const IPAddressFinder = () => {
-  const [ip, setIp] = useState(''); // Define o estado para o IP digitado pelo usuário
+export const IPAddressFinder = () => {
+  const [ip, setIp] = useState(""); // Define o estado para o IP digitado pelo usuário
   const [ipData, setIpData] = useState(null); // Define o estado para armazenar os dados do IP
 
   // Função para buscar os dados do IP
   const findIP = async () => {
     try {
-      const url = `https://ipinfo.io/${ip}/json`
+      const url = `https://ipinfo.io/${ip}/json`;
       const response = await axios.get(url); // Faz uma requisição GET para a API ipinfo.io
       setIpData(response.data); // Armazena os dados da resposta no estado ipData
     } catch (error) {
@@ -92,16 +92,22 @@ const IPAddressFinder = () => {
         onChange={(e) => setIp(e.target.value)} // Atualiza o estado ip conforme o usuário digita
         placeholder="Enter IP address" // Placeholder do campo de entrada
       />
-      <Button onClick={findIP}>Find IP</Button> {/* Botão que chama a função findIP quando clicado */}
+      <Button onClick={findIP}>Find IP</Button>{" "}
+      {/* Botão que chama a função findIP quando clicado */}
       {ipData && ( // Condicional que exibe os dados do IP se ipData não for null
         <ResultsContainer>
-          <p><strong>IP:</strong> {ipData.ip}</p>
-          <p><strong>Location:</strong> {ipData.city}, {ipData.region}, {ipData.country}</p>
-          <p><strong>ISP:</strong> {ipData.org}</p>
+          <p>
+            <strong>IP:</strong> {ipData.ip}
+          </p>
+          <p>
+            <strong>Location:</strong> {ipData.city}, {ipData.region},{" "}
+            {ipData.country}
+          </p>
+          <p>
+            <strong>ISP:</strong> {ipData.org}
+          </p>
         </ResultsContainer>
       )}
     </Container>
   );
 };
-
-export default IPAddressFinder; // Exporta o componente IPAddressFinder como padrão

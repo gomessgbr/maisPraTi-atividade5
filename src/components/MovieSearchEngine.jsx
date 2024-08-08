@@ -102,7 +102,7 @@ const MovieCard = styled.div`
 `;
 
 // Componente principal MovieSearchEngine
-const MovieSearchEngine = () => {
+export const MovieSearchEngine = () => {
   const [query, setQuery] = useState(''); // Define o estado para a consulta de busca
   const [movies, setMovies] = useState([]); // Define o estado para armazenar os filmes
 
@@ -139,4 +139,3 @@ const MovieSearchEngine = () => {
   );
 };
 
-export default MovieSearchEngine; // Exporta o componente MovieSearchEngine como padrão

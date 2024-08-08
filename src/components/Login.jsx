@@ -47,7 +47,7 @@ const Button = styled.button`
 
 // Componente principal de Login
 // eslint-disable-next-line react/prop-types
-const Login = ({ onLogin }) => {
+export const Login = ({ onLogin }) => {
   const [username, setUsername] = useState(''); // Define o estado para o nome de usuário
   const [password, setPassword] = useState(''); // Define o estado para a senha
 
@@ -83,4 +83,3 @@ const Login = ({ onLogin }) => {
   );
 };
 
-export default Login; // Exporta o componente Login como padrão

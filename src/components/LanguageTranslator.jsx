@@ -93,7 +93,7 @@ const TranslatedText = styled.p`
 `;
 
 // Componente principal LanguageTranslator
-const LanguageTranslator = () => {
+export const LanguageTranslator = () => {
   const [text, setText] = useState(''); // Define o estado para o texto a ser traduzido
   const [translatedText, setTranslatedText] = useState(''); // Define o estado para o texto traduzido
   const [sourceLang, setSourceLang] = useState('en'); // Define o estado para a língua de origem
@@ -151,4 +151,3 @@ const LanguageTranslator = () => {
   );
 };
 
-export default LanguageTranslator; // Exporta o componente LanguageTranslator como padrão

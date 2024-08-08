@@ -70,7 +70,7 @@ const Score = styled.p`
 `;
 
 // Define o componente funcional QuizApp.
-const QuizApp = () => {
+export const QuizApp = () => {
   // Usa o hook useState para criar variáveis de estado para a pontuação e a pergunta atual.
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -118,5 +118,3 @@ const QuizApp = () => {
   );
 };
 
-// Exporta o componente QuizApp para que possa ser utilizado em outras partes da aplicação.
-export default QuizApp;
