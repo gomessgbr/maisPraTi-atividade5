@@ -9,7 +9,7 @@ import {
   Link,
 } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
-import styled from "styled-components";
+
 import {
   FaQrcode,
   FaSearch,
@@ -21,7 +21,6 @@ import {
   FaArrowLeft,
 } from "react-icons/fa";
 
-import "./App.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {
   IPAddressFinder,
@@ -30,29 +29,11 @@ import {
   QRCodeGenerator,
   QuizApp,
   TodoApp,
-  Login
+  Login,
 } from "./components";
 
-// Estiliza o contêiner principal do aplicativo.
-const AppContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100vh;
-  background-color: #f0f0f0;
-`;
-
-// Estiliza o conteúdo principal do aplicativo.
-const MainContent = styled.div`
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-`;
+import { AppContainer, MainContent } from "./styles";
+import styled from "styled-components";
 
 // Estiliza o contêiner do carrossel.
 const CarouselContainer = styled.div`
