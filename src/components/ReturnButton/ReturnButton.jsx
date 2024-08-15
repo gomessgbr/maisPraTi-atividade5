@@ -1,10 +1,10 @@
 import { FaArrowLeft } from "react-icons/fa";
 import { ReturnButtonStyled } from "./ReturnButtonStyles";
 
-export function ReturnButton({ handleReturn }) {
+export function ReturnButton({ handleReturn, path }) {
   return (
     <ReturnButtonStyled onClick={handleReturn}>
-      <FaArrowLeft /> Return
+      <FaArrowLeft /> {path === "/home" ? "Return" : "Home"}
     </ReturnButtonStyled>
   );
 }
