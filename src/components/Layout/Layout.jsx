@@ -16,7 +16,6 @@ export function Layout() {
     setIsOpen(!isOpen);
   };
 
-  console.log(location);
 
   const onReturn = () => {
     if (location.pathname === "/home") {
