@@ -43,3 +43,12 @@ export const Button = styled.button`
     background-color: #0056b3;
   }
 `;
+
+export const ErrorArea = styled.div`
+
+
+`
+
+export const ErrorMessage = styled.p`
+  color: crimson;
+`
