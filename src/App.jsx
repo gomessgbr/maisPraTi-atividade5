@@ -7,11 +7,9 @@ import "./App.css";
 
 // Define o componente principal do aplicativo.
 export const App = () => {
-  
   return (
     <RouterProvider router={router}>
-        <AuthProvider/>
-      </RouterProvider>
-
+      <AuthProvider />
+    </RouterProvider>
   );
 };

@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 //Hook para verificar se o usuário está autenticado
 export const useAuth = () => {
@@ -8,22 +8,29 @@ export const useAuth = () => {
 
   //Verifica se o usuário está autenticado
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
+    // Caso exista token vai direto para tela de home, caso não vai para a tela de login
+    if (token === null) {
+      navigate("/");
+      return
+    }
+    navigate("/home");
+
     setIsAuthenticated(!!token);
-  }, []);
+  }, [navigate]);
 
   //Função para logar o usuário
   const login = (token) => {
-    localStorage.setItem('token', token);
+    localStorage.setItem("token", token);
     setIsAuthenticated(true);
-    navigate('/home');
+    navigate("/home");
   };
 
   //Função para deslogar o usuário
   const logout = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
     setIsAuthenticated(false);
-    navigate('/');
+    navigate("/");
   };
 
   //Retorna o estado de autenticação, a função de login e a função de logout
