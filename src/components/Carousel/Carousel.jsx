@@ -7,12 +7,12 @@ import {
 } from "./CarouselStyles";
 
 const carouselItems = [
-  { title: "QR Code Generator", component: "QRCodeGenerator" },
-  { title: "IP Address Finder", component: "IPAddressFinder" },
-  { title: "Movie Search Engine", component: "MovieSearchEngine" },
-  { title: "Todo App", component: "TodoApp" },
-  { title: "Quiz App", component: "QuizApp" },
-  { title: "Language Translator", component: "LanguageTranslator" },
+  { title: "QR Code Generator", component: "qr-code-generator" },
+  { title: "IP Address Finder", component: "ip-address-finder" },
+  { title: "Movie Search Engine", component: "movie-search" },
+  { title: "Todo App", component: "todo-app" },
+  { title: "Quiz App", component: "quiz-app" },
+  { title: "Language Translator", component: "language-translator" },
 ];
 export function Carousel({ onComponentSelect }) {
   const [carouselIndex, setCarouselIndex] = useState(0);
@@ -24,7 +24,9 @@ export function Carousel({ onComponentSelect }) {
   };
   return (
     <CarouselContainer>
+      {/* Desativei os thumbs pois essa lib tem um problema com map e components customizados https://github.com/leandrowd/react-responsive-carousel/blob/master/TROUBLESHOOTING.md */}
       <CustomCarousel
+        showThumbs={false}
         showArrows={true}
         infiniteLoop={true}
         autoPlay={true}
