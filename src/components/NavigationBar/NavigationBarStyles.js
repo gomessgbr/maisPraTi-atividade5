@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // Estiliza a barra de navegação.
 export const NavBar = styled.div`
@@ -19,7 +19,6 @@ export const NavBar = styled.div`
     top: 0;
     left: 0;
     right: 0;
-    display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
   }
 `;
 
@@ -38,7 +37,7 @@ export const NavBarToggle = styled.div`
 `;
 
 // Estiliza os links na barra de navegação.
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(NavLink)`
   color: white;
   text-decoration: none;
   padding: 12px;

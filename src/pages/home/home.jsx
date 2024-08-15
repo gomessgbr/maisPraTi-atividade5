@@ -1,3 +1,13 @@
+import { Carousel } from "../../components";
+
 export function Home() {
-  return <div>Home</div>;
+  return (
+    <>
+      <Carousel
+        onComponentSelect={() => {
+          console.log("component selected");
+        }}
+      />
+    </>
+  );
 }

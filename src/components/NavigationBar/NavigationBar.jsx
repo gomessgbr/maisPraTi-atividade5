@@ -8,45 +8,45 @@ import {
   FaTasks,
 } from "react-icons/fa";
 import { NavBar, NavBarToggle, StyledLink } from "./NavigationBarStyles";
-import { useAuth } from "../../hooks";
 
-export default function NavigationBar() {
-
-    const { isAuthenticated, logout } = useAuth();
+export default function NavigationBar({ isOpen, onLogout, toggleNav }) {
   return (
     <>
-      <NavBarToggle>
-        <FaBars size={24} color="#2C3E50" />
+      <NavBarToggle onClick={toggleNav}>
+        <FaBars size={24} color="#FFFFFF" /> 
       </NavBarToggle>
-
-      {isAuthenticated && (
-        <NavBar>
-          <StyledLink>
+      {isOpen && (
+        <NavBar
+          style={{
+            "@media (maxWidth: 768px)": { display: isOpen ? "flex" : "none" },
+          }}
+        >
+          <StyledLink to={"/qr-code-generator"}>
             <FaQrcode />
             QR Code Generator
           </StyledLink>
-          <StyledLink>
+          <StyledLink to={"/ip-address-finder"}>
             <FaNetworkWired />
             IP Address Finder
           </StyledLink>
-          <StyledLink>
+          <StyledLink to={"/movie-search"}>
             <FaSearch />
             Movie Search
           </StyledLink>
-          <StyledLink>
+          <StyledLink to={"/todo-app"}>
             <FaTasks />
             Todo App
           </StyledLink>
-          <StyledLink>
+          <StyledLink to={"/quiz-app"}>
             <FaRegQuestionCircle />
             Quiz App
           </StyledLink>
-          <StyledLink>
+          <StyledLink to={"/language-translator"}>
             <FaGlobeAmericas />
             Translator
           </StyledLink>
           <button
-            onClick={logout}
+            onClick={onLogout}
             style={{
               marginTop: "20px",
               color: "white",

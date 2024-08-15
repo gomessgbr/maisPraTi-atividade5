@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //Hook para verificar se o usuário está autenticado
 export const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate(); // Hook para navegação.
 
   //Verifica se o usuário está autenticado
   useEffect(() => {
@@ -14,12 +16,14 @@ export const useAuth = () => {
   const login = (token) => {
     localStorage.setItem('token', token);
     setIsAuthenticated(true);
+    navigate('/home');
   };
 
   //Função para deslogar o usuário
   const logout = () => {
     localStorage.removeItem('token');
     setIsAuthenticated(false);
+    navigate('/');
   };
 
   //Retorna o estado de autenticação, a função de login e a função de logout
