@@ -1,13 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import { BrowserRouter as Router } from 'react-router-dom'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { App } from "./App.jsx";
+import { ErrorBoundary } from "react-error-boundary";
+import { ErrorFallBack } from "./components/index.js";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Router>
+    <ErrorBoundary fallback={<ErrorFallBack/>}>
       <App />
-    </Router>
-  </React.StrictMode>,
-)
+    </ErrorBoundary>
+  </React.StrictMode>
+);
