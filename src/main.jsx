@@ -6,7 +6,7 @@ import { ErrorFallBack } from "./components/index.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ErrorBoundary fallback={<ErrorFallBack/>}>
+    <ErrorBoundary fallback={<ErrorFallBack />}>
       <App />
     </ErrorBoundary>
   </React.StrictMode>
