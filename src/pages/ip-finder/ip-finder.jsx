@@ -5,9 +5,9 @@ import {
   Input,
   ResultsContainer,
   Title,
-  ErrorsIp,
 } from "./ip-finder-styles";
 import { useGetIP } from "./hooks/useGetIP";
+import { ErrorLabel } from "../../components";
 
 // Página de Buscador de Endereço IP
 export const IPAddressFinder = () => {
@@ -40,7 +40,7 @@ export const IPAddressFinder = () => {
           </p>
         </ResultsContainer>
       )}
-      {errors.show && <ErrorsIp>{errors.message}</ErrorsIp>}
+      <ErrorLabel show={errors.show} message={errors.message} />
     </Container>
   );
 };
