@@ -16,19 +16,15 @@ export function Login() {
   }); // Define o estado para erros de login
   const { login } = useAuth();
 
-  const id = useId(); // Hook do react que cria ids para serem usados em inputs, forms, labels, buttons etc
+  const id = useId(); // Hook do react que cria ids únicos para serem usados em inputs, forms, labels, buttons etc
 
   // Função para lidar com o envio do formulário
   const handleSubmit = (e) => {
     e.preventDefault(); // Previne o comportamento padrão do formulário
     const formData = new FormData(e.target); // Cria um objeto FormData a partir dos dados do formulário (e.target)
-    const { username, password } = Object.fromEntries(formData.entries()); // Converte o FormData em um objeto JavaScript com as entradas do formulário
+    const data = Object.fromEntries(formData.entries()); // Converte o FormData em um objeto JavaScript com as entradas do formulário
 
-    if (username === "admin" && password === "password") {
-      login(`${username}+${password}`); // Chama a função onLogin passada como prop se as credenciais estiverem corretas
-    } else {
-      setError({ ...error, show: true }); // Exibe mensagem de login inválido
-    }
+    login(data, handleErrorLogin); // Chama a função login passada como prop se as credenciais estiverem corretas
   };
 
   // Função que é disparada quando o usuário clica no input
@@ -37,6 +33,10 @@ export function Login() {
     if (error.show) {
       setError({ ...error, show: false }); // Oculta a mensagem de login inválida
     }
+  };
+
+  const handleErrorLogin = (message) => {
+    setError({ message, show: true });
   };
 
   return (
