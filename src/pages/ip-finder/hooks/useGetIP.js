@@ -15,7 +15,6 @@ export const useGetIP = () => {
       const url = `https://ipinfo.io/${ip}/json`;
       const data = await makeRequest("get", url); // Faz uma requisição GET para a API ipinfo.io
       setIpData(data); // Armazena os dados da resposta no estado ipData
-      console.log("data", data);
     } catch (error) {
       onError();
     }
