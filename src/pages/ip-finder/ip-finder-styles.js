@@ -13,6 +13,7 @@ export const Container = styled.div`
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   max-width: 400px;
   margin: 50px auto;
+  height: auto;
 `;
 
 // Define o estilo do título
@@ -65,3 +66,9 @@ export const ResultsContainer = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
 `;
+
+export const ErrorsIp = styled.span`
+  color: red;
+  padding: 10px;
+
+`
