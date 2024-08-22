@@ -12,9 +12,9 @@ export const makeRequest = async (
     const response = await axios({
       method,
       url,
-      data,
       params,
       headers,
+      data,
     });
     return response.data; // Retorna os dados da resposta
   } catch (error) {
